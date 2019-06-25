@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/systemjs/dist/system.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -128,6 +130,111 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ModLoader": {
+      "root": "projects/mod-loader",
+      "sourceRoot": "projects/mod-loader/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mod-loader/tsconfig.lib.json",
+            "project": "projects/mod-loader/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mod-loader/src/test.ts",
+            "tsConfig": "projects/mod-loader/tsconfig.spec.json",
+            "karmaConfig": "projects/mod-loader/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mod-loader/tsconfig.lib.json",
+              "projects/mod-loader/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ModLazyA": {
+      "root": "projects/mod-lazy-a",
+      "sourceRoot": "projects/mod-lazy-a/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mod-lazy-a/tsconfig.lib.json",
+            "project": "projects/mod-lazy-a/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mod-lazy-a/src/test.ts",
+            "tsConfig": "projects/mod-lazy-a/tsconfig.spec.json",
+            "karmaConfig": "projects/mod-lazy-a/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mod-lazy-a/tsconfig.lib.json",
+              "projects/mod-lazy-a/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ModLazyB": {
+      "root": "projects/mod-lazy-b",
+      "sourceRoot": "projects/mod-lazy-b/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mod-lazy-b/tsconfig.lib.json",
+            "project": "projects/mod-lazy-b/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mod-lazy-b/src/test.ts",
+            "tsConfig": "projects/mod-lazy-b/tsconfig.spec.json",
+            "karmaConfig": "projects/mod-lazy-b/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mod-lazy-b/tsconfig.lib.json",
+              "projects/mod-lazy-b/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

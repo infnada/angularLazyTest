@@ -17,6 +17,26 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mod-loader": [
+        "dist/mod-loader"
+      ],
+      "mod-loader/*": [
+        "dist/mod-loader/*"
+      ],
+      "mod-lazy-a": [
+        "dist/mod-lazy-a"
+      ],
+      "mod-lazy-a/*": [
+        "dist/mod-lazy-a/*"
+      ],
+      "mod-lazy-b": [
+        "dist/mod-lazy-b"
+      ],
+      "mod-lazy-b/*": [
+        "dist/mod-lazy-b/*"
+      ]
+    }
   }
 }
