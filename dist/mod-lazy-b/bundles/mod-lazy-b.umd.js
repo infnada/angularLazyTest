@@ -71,10 +71,7 @@
             { type: i0.NgModule, args: [{
                         declarations: [ModLazyBComponent],
                         imports: [],
-                        exports: [ModLazyBComponent],
-                        providers: [
-                            modLazyA.ModLazyAService
-                        ]
+                        exports: [ModLazyBComponent]
                     },] }
         ];
         /** @nocollapse */

@@ -66,10 +66,7 @@ var ModLazyBModule = /** @class */ (function () {
         { type: NgModule, args: [{
                     declarations: [ModLazyBComponent],
                     imports: [],
-                    exports: [ModLazyBComponent],
-                    providers: [
-                        ModLazyAService
-                    ]
+                    exports: [ModLazyBComponent]
                 },] }
     ];
     /** @nocollapse */

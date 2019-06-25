@@ -1,5 +1,5 @@
 import {Compiler, Component, Injector, ViewChild, ViewContainerRef} from '@angular/core';
-import {ModLoaderService} from "../../projects/mod-loader/src/lib/mod-loader.service";
+import {ModLoaderService} from "mod-loader";
 
 @Component({
   selector: 'app-root',
