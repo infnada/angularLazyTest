@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import {Component, ViewChild, ViewContainerRef} from '@angular/core';
 import {ModLoaderService} from "../../projects/mod-loader/src/lib/mod-loader.service";
 
 @Component({
@@ -7,18 +7,18 @@ import {ModLoaderService} from "../../projects/mod-loader/src/lib/mod-loader.ser
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('lazyComponentAView', { read: ViewContainerRef }) lazyComponentAView;
-  @ViewChild('lazyComponentBView', { read: ViewContainerRef }) lazyComponentBView;
+  @ViewChild('lazyComponentAView', {read: ViewContainerRef}) lazyComponentAView;
+  @ViewChild('lazyComponentBView', {read: ViewContainerRef}) lazyComponentBView;
 
   constructor(private modLoaderService: ModLoaderService) {
 
     const modules = [
       {
-        url: '/mod-lazy-a.umd.js',
+        url: 'https://raw.githubusercontent.com/infnada/angularLazyTest/master/dist/mod-lazy-a/bundles/mod-lazy-a.umd.js',
         name: 'ModLazyAModule'
       },
       {
-        url: '/mod-lazy-b.umd.js',
+        url: 'https://raw.githubusercontent.com/infnada/angularLazyTest/master/dist/mod-lazy-b/bundles/mod-lazy-b.umd.js',
         name: 'ModLazyBModule'
       }
     ];
@@ -50,7 +50,6 @@ export class AppComponent {
       });
     }, 1000);
   }
-
 
 
 }

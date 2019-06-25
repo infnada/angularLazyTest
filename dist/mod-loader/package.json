@@ -1,0 +1,21 @@
+{
+  "name": "mod-loader",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/mod-loader.umd.js",
+  "module": "fesm5/mod-loader.js",
+  "es2015": "fesm2015/mod-loader.js",
+  "esm5": "esm5/mod-loader.js",
+  "esm2015": "esm2015/mod-loader.js",
+  "fesm5": "fesm5/mod-loader.js",
+  "fesm2015": "fesm2015/mod-loader.js",
+  "typings": "mod-loader.d.ts",
+  "metadata": "mod-loader.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

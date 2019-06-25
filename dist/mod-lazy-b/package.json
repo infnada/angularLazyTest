@@ -1,0 +1,21 @@
+{
+  "name": "mod-lazy-b",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/mod-lazy-b.umd.js",
+  "module": "fesm5/mod-lazy-b.js",
+  "es2015": "fesm2015/mod-lazy-b.js",
+  "esm5": "esm5/mod-lazy-b.js",
+  "esm2015": "esm2015/mod-lazy-b.js",
+  "fesm5": "fesm5/mod-lazy-b.js",
+  "fesm2015": "fesm2015/mod-lazy-b.js",
+  "typings": "mod-lazy-b.d.ts",
+  "metadata": "mod-lazy-b.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
