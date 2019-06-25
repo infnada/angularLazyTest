@@ -10,6 +10,13 @@ export function createCompiler(fn: CompilerFactory): Compiler {
   return fn.createCompiler();
 }
 
+// Prepare output for SystemJS
+declare const SystemJS: any;
+import * as angularCore from '@angular/core';
+import * as angularCommon from '@angular/common';
+SystemJS.set('@angular/core', SystemJS.newModule(angularCore));
+SystemJS.set('@angular/common', SystemJS.newModule(angularCommon));
+
 @NgModule({
   declarations: [
     AppComponent

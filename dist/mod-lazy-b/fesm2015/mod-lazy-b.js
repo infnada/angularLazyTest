@@ -34,7 +34,7 @@ class ModLazyBComponent {
      */
     ngOnInit() {
         console.log('Getting data from ModLazyB Component constructor');
-        this.modLazyAService.getData();
+        console.log('data', this.modLazyAService.getData());
     }
 }
 ModLazyBComponent.decorators = [
@@ -64,7 +64,7 @@ class ModLazyBModule {
         this.modLazyAService = modLazyAService;
         console.log('ModLazyB Module constructor');
         console.log('Getting data from ModLazyB Module constructor');
-        this.modLazyAService.getData();
+        console.log('data', this.modLazyAService.getData());
     }
 }
 ModLazyBModule.decorators = [

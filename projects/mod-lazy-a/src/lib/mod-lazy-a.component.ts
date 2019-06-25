@@ -19,6 +19,7 @@ export class ModLazyAComponent implements OnInit {
   ngOnInit() {
     console.log('Pushing data from ModLazyA Component ngOnInit');
     this.modLazyAService.pushData('some Data from ModLazyA Component ngOnInit');
+    console.log('data', this.modLazyAService.getData());
   }
 
 }

@@ -58,6 +58,7 @@ var ModLazyAComponent = /** @class */ (function () {
     function () {
         console.log('Pushing data from ModLazyA Component ngOnInit');
         this.modLazyAService.pushData('some Data from ModLazyA Component ngOnInit');
+        console.log('data', this.modLazyAService.getData());
     };
     ModLazyAComponent.decorators = [
         { type: Component, args: [{
@@ -82,6 +83,7 @@ var ModLazyAModule = /** @class */ (function () {
         console.log('ModLazyA Module constructor');
         console.log('Pushing data from ModLazyA Module constructor');
         this.modLazyAService.pushData('some Data from ModLazyA Module constructor');
+        console.log('data', this.modLazyAService.getData());
     }
     ModLazyAModule.decorators = [
         { type: NgModule, args: [{

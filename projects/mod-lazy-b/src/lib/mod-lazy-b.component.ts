@@ -18,7 +18,7 @@ export class ModLazyBComponent implements OnInit {
 
   ngOnInit() {
     console.log('Getting data from ModLazyB Component constructor');
-    this.modLazyAService.getData();
+    console.log('data', this.modLazyAService.getData());
   }
 
 }

@@ -15,6 +15,6 @@ export class ModLazyBModule {
     console.log('ModLazyB Module constructor');
 
     console.log('Getting data from ModLazyB Module constructor');
-    this.modLazyAService.getData();
+    console.log('data', this.modLazyAService.getData());
   }
 }
