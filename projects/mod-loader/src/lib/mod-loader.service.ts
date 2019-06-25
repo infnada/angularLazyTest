@@ -1,4 +1,4 @@
-import {Injectable, Injector, Compiler, NgModuleFactory} from '@angular/core';
+import {Injectable, Injector, Compiler} from '@angular/core';
 
 declare const SystemJS: any;
 

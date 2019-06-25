@@ -1,4 +1,4 @@
-import { Injectable, NgModule, Component, defineInjectable } from '@angular/core';
+import { Injectable, Component, NgModule, defineInjectable } from '@angular/core';
 import { ModLazyAService } from 'mod-lazy-a';
 
 /**
@@ -66,7 +66,10 @@ var ModLazyBModule = /** @class */ (function () {
         { type: NgModule, args: [{
                     declarations: [ModLazyBComponent],
                     imports: [],
-                    exports: [ModLazyBComponent]
+                    exports: [ModLazyBComponent],
+                    providers: [
+                        ModLazyAService
+                    ]
                 },] }
     ];
     /** @nocollapse */

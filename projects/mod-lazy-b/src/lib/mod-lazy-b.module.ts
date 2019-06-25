@@ -1,14 +1,16 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { ModLazyAService } from 'mod-lazy-a';
+import {ModLazyAService} from 'mod-lazy-a';
 
-import { ModLazyBComponent } from './mod-lazy-b.component';
+import {ModLazyBComponent} from './mod-lazy-b.component';
 
 @NgModule({
   declarations: [ModLazyBComponent],
-  imports: [
-  ],
-  exports: [ModLazyBComponent]
+  imports: [],
+  exports: [ModLazyBComponent],
+  providers: [
+    ModLazyAService
+  ]
 })
 export class ModLazyBModule {
   constructor(private modLazyAService: ModLazyAService) {
