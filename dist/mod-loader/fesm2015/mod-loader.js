@@ -24,14 +24,14 @@ class ModLoaderService {
          * @return {?}
          */
         (moduleToCompile) => {
-            return this.compiler.compileModuleAsync(moduleToCompile[lazyMod.name]);
+            return this.compiler.compileModuleAndAllComponentsAsync(moduleToCompile[lazyMod.name]);
         })).then((/**
-         * @param {?} modFac
+         * @param {?} comp
          * @return {?}
          */
-        (modFac) => {
-            modFac.create(this.injector);
-            lazyMod.factory = modFac;
+        (comp) => {
+            comp.ngModuleFactory.create(this.injector);
+            lazyMod.factory = comp;
             return lazyMod;
         }));
     }

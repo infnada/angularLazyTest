@@ -16,11 +16,11 @@ export class ModLoaderService {
     console.log(`Loading Module ${lazyMod.name}`);
     return SystemJS.import(lazyMod.url).then((moduleToCompile) => {
 
-      return this.compiler.compileModuleAsync(moduleToCompile[lazyMod.name]);
-    }).then((modFac: NgModuleFactory<any>) => {
-      modFac.create(this.injector);
+      return this.compiler.compileModuleAndAllComponentsAsync(moduleToCompile[lazyMod.name]);
+    }).then((comp) => {
+      comp.ngModuleFactory.create(this.injector);
 
-      lazyMod.factory = modFac;
+      lazyMod.factory = comp;
 
       return lazyMod;
     });

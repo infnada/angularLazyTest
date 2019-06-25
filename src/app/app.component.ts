@@ -1,4 +1,4 @@
-import {Compiler, Component, ViewChild, ViewContainerRef} from '@angular/core';
+import {Compiler, Component, Injector, ViewChild, ViewContainerRef} from '@angular/core';
 import {ModLoaderService} from "../../projects/mod-loader/src/lib/mod-loader.service";
 
 @Component({
@@ -11,6 +11,7 @@ export class AppComponent {
   @ViewChild('lazyComponentBView', {read: ViewContainerRef}) lazyComponentBView;
 
   constructor(private compiler: Compiler,
+              private injector: Injector,
               private modLoaderService: ModLoaderService) {
 
     const modules = [
@@ -25,38 +26,30 @@ export class AppComponent {
     ];
 
     // Load lazy module A
-    this.modLoaderService.loadLazyModule(modules[0]).then((lazyModA) => {
+    this.modLoaderService.loadLazyModule(modules[0]).then((lazyMod) => {
 
-      this.compiler.compileModuleAndAllComponentsAsync<any>(lazyModA.factory.moduleType)
-      .then((factory) => {
+      // Load module component
+      const componentAFactory = lazyMod.factory.componentFactories.filter((component) => {
+        return component.componentType.name === 'ModLazyAComponent';
+      })[0];
 
-        // Load module component
-        const componentAFactory = factory.componentFactories.filter((component) => {
-          return component.componentType.name === 'ModLazyAComponent';
-        })[0];
+      this.lazyComponentAView.createComponent(componentAFactory);
 
-        this.lazyComponentAView.createComponent(componentAFactory);
-
-      });
     });
 
     console.log('Waiting before importing LazyModuleB');
     setTimeout(() => {
       // Load lazy module B
-      this.modLoaderService.loadLazyModule(modules[1]).then((lazyModB) => {
+      this.modLoaderService.loadLazyModule(modules[1]).then((lazyMod) => {
 
-        this.compiler.compileModuleAndAllComponentsAsync<any>(lazyModB.factory.moduleType)
-        .then((factory) => {
+        // Load module component
+        const componentBFactory = lazyMod.factory.componentFactories.filter((component) => {
+          return component.componentType.name === 'ModLazyBComponent';
+        })[0];
 
-          // Load module component
-          const componentBFactory = factory.componentFactories.filter((component) => {
-            return component.componentType.name === 'ModLazyBComponent';
-          })[0];
-
-          this.lazyComponentBView.createComponent(componentBFactory);
-        });
-
+        this.lazyComponentBView.createComponent(componentBFactory, 0, this.injector);
       });
+
     }, 1000);
   }
 

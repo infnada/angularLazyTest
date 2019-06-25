@@ -1,4 +1,4 @@
-import { Injectable, Component, NgModule, defineInjectable } from '@angular/core';
+import { Injectable, NgModule, Component, defineInjectable } from '@angular/core';
 import { ModLazyAService } from 'mod-lazy-a';
 
 /**
